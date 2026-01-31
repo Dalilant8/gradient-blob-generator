@@ -54,4 +54,14 @@ label {
 
 canvas {
   display: block;
+
+}
+#helpBtn {
+  background: #444;
+  transition: background 0.2s;
+}
+
+#helpBtn:hover {
+  background: #666;
+  cursor: pointer;
 }
