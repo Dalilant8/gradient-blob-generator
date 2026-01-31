@@ -211,9 +211,16 @@ document.getElementById("downloadBtn").addEventListener("click", () => {
     link.click();
 });
 
+// Add this with your other event listeners
+document.getElementById("helpBtn").addEventListener("click", () => {
+    // Replace the link below with your actual GitHub repo link
+    window.open("https://github.com/Dalilant8/gradient-blob-generator?tab=readme-ov-file#-gradient-generator-control-guide", "_blank");
+});
+
 // 5. INITIALIZE
 window.onload = () => {
     seedInput.value = currentSeed;
     updateSliderVisibility();
     draw();
+
 };
