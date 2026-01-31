@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Gradient Generator</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <h1>Gradient Generator</h1>
+
+  <div class="controls">
+    <div class="group">
+      <label>Width (X) <input type="number" id="widthInput" value="1920"></label>
+      <label>Height (Y) <input type="number" id="heightInput" value="1080"></label>
+    </div>
+
+    <div class="group">
+      <label>Presets
+        <select id="resolutionPreset">
+          <option value="preset">Select...</option>
+          <option value="1080p">1080p</option>
+          <option value="2k">2K</option>
+          <option value="4k">4K</option>
+          <option value="screen">Monitor</option>
+        </select>
+      </label>
+    </div>
+
+    <div class="group">
+      <label>Theme Mode
+        <select id="themeMode">
+          <option value="custom">Custom Colors</option>
+          <option value="complementary">Complementary</option>
+          <option value="analogous">Analogous</option>
+          <option value="monochromatic">Monochromatic</option>
+          <option value="triadic">Triadic</option>
+          <option value="split-complementary">Split-Complementary</option>
+          <option value="square">Square (Tetradic)</option>
+        </select>
+      </label>
+      <div id="customColorScale" style="display: none; gap: 10px; margin-top: 8px;">
+        <input type="color" id="color1" value="#ff00d9">
+        <input type="color" id="color2" value="#00f2ff">
+      </div>
+      <div class="group" id="rainbowSliderGroup" style="display: none;">
+        <label>Rainbow Slider <input type="range" id="rainbowSlider" min="0" max="360" value="0"></label>
+      </div>
+      <div class="group" id="monochromaticColorGroup" style="display: none;">
+        <label>Monochromatic Base Color <input type="color" id="monochromaticColorPicker" value="#0000ff"></label>
+      </div>
+    </div>
+
+    <div class="group">
+      <label>Blob Size <input type="range" id="blobSizeSlider" min="1" max="100" value="20"></label>
+      <label>Blob Amount <input type="range" id="blobAmountSlider" min="1" max="50" value="15"></label>
+    </div>
+
+    <div class="group">
+      <label>Brightness <input type="range" id="brightnessSlider" min="0" max="200" value="100"></label>
+      <label>Noise (Grain) <input type="range" id="noiseSlider" min="0" max="100" value="15"></label>
+    </div>
+
+    <div class="group">
+      <label>Saturation <input type="range" id="saturationSlider" min="0" max="200" value="100"></label>
+    </div>
+
+    <div class="group">
+      <label>Background Color <input type="color" id="backgroundColorPicker" value="#050505"></label>
+    </div>
+
+    <button id="regenerateBtn">Generate New</button>
+
+    <div class="group">
+      <label>Seed 
+        <div style="display: flex; gap: 5px;">
+          <input type="text" id="seedInput" placeholder="Enter seed...">
+          <button id="copySeedBtn" style="padding: 2px 8px; font-size: 10px;">Copy</button>
+        </div>
+      </label>
+    </div>
+    
+    <button id="downloadBtn">Download PNG</button>
+  </div>
+
+  <div class="canvas-container">
+    <div id="noiseOverlay"></div>
+    <canvas id="canvas"></canvas>
+  </div>
+
+  <div class="group">
+      <div style="display: flex; gap: 5px; padding-top: 20px;">
+         <button id="helpBtn" >How to Use</button>
+        <button id="About" >About</button>
+      </div>
+    </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

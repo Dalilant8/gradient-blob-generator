@@ -1,0 +1,139 @@
+body {
+  background: #0d0d0d;
+  color: #fff;
+  font-family: 'Segoe UI', sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+}
+
+.controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  background: #1a1a1a;
+  padding: 20px;
+  border-radius: 12px;
+  margin-bottom: 20px;
+  border: 1px solid #333;
+  justify-content: center;
+}
+
+.group {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+label {
+  font-size: 10px;
+  color: #888;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.canvas-container {
+  position: relative;
+  display: inline-block;
+  border-radius: 8px;
+  box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+  background: #000;
+}
+
+#noiseOverlay {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  pointer-events: none;
+  background-image: url('https://grainy-gradients.vercel.app/noise.svg');
+  mix-blend-mode: overlay;
+  z-index: 2;
+  opacity: 0.1;
+}
+
+button {
+  /* Match the container's aesthetic */
+  background: #1a1a1a;        /* Same as .controls background */
+  color: #fff;               /* White text */
+  border: 1px solid #333;    /* Same border as the container */
+  border-radius: 12px;       /* Same roundness as the container */
+  
+  /* Modern button styling */
+  padding: 10px 18px;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: all 0.2s ease;  /* Smooth hover effect */
+}
+
+/* Hover effect to make them feel interactive */
+button:hover {
+  background: #333;          /* Lighten slightly on hover */
+  border-color: #555;        /* Brighten border on hover */
+}
+
+
+#downloadBtn:hover {
+  background: #218838;
+}
+
+/*DROPPPDOWWNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNN*/
+select {
+  background: #1a1a1a;        /* Match the container background */
+  color: #fff;               /* White text */
+  border: 1px solid #333;    /* Subtle border */
+  border-radius: 12px;       /* Rounded corners */
+  padding: 8px 12px;
+  font-size: 14px;
+  cursor: pointer;
+  outline: none;             /* Removes the blue glow on click */
+  transition: border-color 0.2s;
+}
+
+/* Brighten the border when the user clicks or hovers */
+select:hover, select:focus {
+  border-color: #555;
+}
+
+/* Optional: Style the actual options inside the dropdown */
+select option {
+  background: #1a1a1a;
+  color: #fff;
+}
+
+/*NUMBERSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSS*/
+/* Style for Number, Text, and Seed inputs */
+input[type="number"], 
+input[type="text"] {
+  background: #1a1a1a;        /* Match container */
+  color: #fff;               /* White text */
+  border: 1px solid #333;    /* Subtle border */
+  border-radius: 12px;       /* Match buttons/dropdowns */
+  padding: 8px 12px;
+  font-family: inherit;
+  font-size: 14px;
+  outline: none;             /* Remove blue glow */
+  transition: border-color 0.2s, background 0.2s;
+}
+
+/* Hover and Focus states */
+input[type="number"]:hover, 
+input[type="text"]:hover,
+input[type="number"]:focus, 
+input[type="text"]:focus {
+  border-color: #555;
+  background: #222;          /* Slightly lighter when typing */
+}
+
+/* Optional: Clean up the "spinners" (up/down arrows) in number inputs */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  margin-left: 10px;
+}
+
+canvas {
+  display: block;
+}
